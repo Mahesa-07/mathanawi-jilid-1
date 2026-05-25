@@ -1,0 +1,253 @@
+/* ========================================
+   NAV LIST
+   PREMIUM SIDEBAR NAVIGATION
+======================================== */
+
+.nav-list,
+.nav0-list{
+
+  list-style:none;
+
+  padding:0;
+
+  margin:0;
+}
+
+
+/* ========================================
+   NAV ITEM
+======================================== */
+
+.nav-list li,
+.nav0-list li{
+
+  margin-bottom:8px;
+}
+
+
+/* ========================================
+   NAV LINK
+======================================== */
+
+.nav-list a,
+.nav0-list a{
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  min-height:46px;
+
+  padding:12px 14px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  color:var(--text);
+
+  background:
+  rgba(255,255,255,.02);
+
+  border:
+  1px solid transparent;
+
+  transition:
+  transform .22s ease,
+  background .22s ease,
+  border-color .22s ease,
+  color .22s ease,
+  box-shadow .22s ease;
+}
+
+
+/* subtle top light */
+
+.nav-list a::before,
+.nav0-list a::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.04),
+    transparent 50%
+  );
+
+  opacity:0;
+
+  transition:
+  opacity .22s ease;
+
+  pointer-events:none;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.nav-list a:hover,
+.nav0-list a:hover{
+
+  transform:
+  translateX(4px);
+
+  color:var(--gold);
+
+  background:
+  rgba(224,184,79,.08);
+
+  border-color:
+  rgba(224,184,79,.12);
+
+  box-shadow:
+  0 8px 20px rgba(224,184,79,.06);
+}
+
+
+/* top light show */
+
+.nav-list a:hover::before,
+.nav0-list a:hover::before{
+
+  opacity:1;
+}
+
+
+/* ========================================
+   ACTIVE
+======================================== */
+
+.nav-list a.active,
+.nav0-list a.active{
+
+  color:var(--gold);
+
+  font-weight:600;
+
+  background:
+  rgba(224,184,79,.12);
+
+  border-color:
+  rgba(224,184,79,.14);
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,255,255,.02),
+  0 10px 24px rgba(224,184,79,.08);
+}
+
+
+/* active glow */
+
+.nav-list a.active::before,
+.nav0-list a.active::before{
+
+  opacity:1;
+}
+
+
+/* ========================================
+   FOCUS ACCESSIBILITY
+======================================== */
+
+.nav-list a:focus-visible,
+.nav0-list a:focus-visible{
+
+  outline:
+  2px solid rgba(224,184,79,.45);
+
+  outline-offset:2px;
+}
+
+
+/* ========================================
+   ACTIVE PRESS
+======================================== */
+
+.nav-list a:active,
+.nav0-list a:active{
+
+  transform:
+  scale(.985);
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark .nav-list a,
+body.dark .nav0-list a{
+
+  background:
+  rgba(255,255,255,.015);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .nav-list li,
+  .nav0-list li{
+
+    margin-bottom:7px;
+  }
+
+  .nav-list a,
+  .nav0-list a{
+
+    min-height:44px;
+
+    padding:11px 12px;
+
+    border-radius:14px;
+
+    font-size:14px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media(max-width:420px){
+
+  .nav-list a,
+  .nav0-list a{
+
+    padding:10px 12px;
+
+    font-size:13.5px;
+
+    border-radius:13px;
+  }
+}
+.nav-list {
+  counter-reset: nav-counter -1; /* mulai dari -1 supaya item pertama jadi 0 */
+}
+
+.nav-list li {
+  counter-increment: nav-counter;
+}
+
+.nav-list li a::before {
+  content: counter(nav-counter) ". ";
+  margin-right: 6px;
+  color: var(--text); /* atau warna lain */
+}

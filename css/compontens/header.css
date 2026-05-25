@@ -1,0 +1,362 @@
+/* ========================================
+   APP HEADER
+   PREMIUM CLEAN UI
+======================================== */
+
+.app-header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  display:grid;
+
+  grid-template-columns:
+  1fr auto 1fr;
+
+  align-items:center;
+
+  gap:10px;
+
+  width:100%;
+
+  padding:10px 14px;
+
+  background:
+  rgba(255,255,255,.72);
+
+  backdrop-filter:
+  blur(18px);
+
+  -webkit-backdrop-filter:
+  blur(18px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,.05);
+
+  transition:
+  background .3s ease,
+  box-shadow .3s ease,
+  border-color .3s ease;
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark .app-header{
+
+  background:
+  rgba(12,14,18,.74);
+
+  border-bottom:
+  1px solid rgba(255,255,255,.05);
+
+  box-shadow:
+  0 6px 24px rgba(0,0,0,.28);
+}
+
+
+/* ========================================
+   HEADER LAYOUT
+======================================== */
+
+.header-left,
+.header-center,
+.header-right{
+
+  display:flex;
+
+  align-items:center;
+}
+
+
+/* left */
+
+.header-left{
+
+  justify-content:flex-start;
+}
+
+
+/* center */
+
+.header-center{
+
+  justify-content:center;
+
+  overflow:hidden;
+
+  min-width:0;
+}
+
+
+/* right */
+
+.header-right{
+
+  justify-content:flex-end;
+
+  gap:8px;
+}
+
+
+/* ========================================
+   APP TITLE
+======================================== */
+
+.app-title{
+
+  margin:0;
+
+  color:var(--text);
+
+  font-size:16px;
+
+  font-weight:650;
+
+  letter-spacing:-.2px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+  text-overflow:ellipsis;
+
+  overflow:hidden;
+
+  max-width:100%;
+
+  text-rendering:
+  optimizeLegibility;
+
+  -webkit-font-smoothing:
+  antialiased;
+}
+
+
+/* ========================================
+   MARQUEE TITLE
+======================================== */
+
+/* aktif hanya jika class marquee ada */
+
+.app-title.marquee{
+
+  display:inline-block;
+
+  padding-left:100%;
+
+  will-change:transform;
+}
+
+
+/* mobile */
+
+@media(max-width:768px){
+
+  .app-title.marquee{
+
+    animation:
+    titleMove 11s linear infinite;
+  }
+}
+
+
+/* desktop */
+
+@media(min-width:769px){
+
+  .app-title.marquee{
+
+    animation:
+    titleMove 15s linear infinite;
+  }
+}
+
+
+/* animation */
+
+@keyframes titleMove{
+
+  from{
+
+    transform:
+    translateX(0);
+  }
+
+  to{
+
+    transform:
+    translateX(-100%);
+  }
+}
+
+
+/* ========================================
+   ICON BUTTON
+======================================== */
+
+.icon-btn{
+
+  width:40px;
+
+  height:40px;
+
+  flex-shrink:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:14px;
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  background:
+  rgba(255,255,255,.05);
+
+  color:var(--text);
+
+  cursor:pointer;
+
+  backdrop-filter:
+  blur(10px);
+
+  transition:
+  transform .22s ease,
+  background .22s ease,
+  border-color .22s ease,
+  opacity .22s ease,
+  box-shadow .22s ease;
+}
+
+
+/* hover */
+
+.icon-btn:hover{
+
+  transform:
+  translateY(-2px);
+
+  background:
+  rgba(255,255,255,.08);
+
+  border-color:
+  rgba(255,255,255,.12);
+
+  box-shadow:
+  0 6px 18px rgba(0,0,0,.08);
+}
+
+
+/* active */
+
+.icon-btn:active{
+
+  transform:
+  scale(.94);
+}
+
+
+/* dark */
+
+body.dark .icon-btn{
+
+  background:
+  rgba(255,255,255,.04);
+
+  border:
+  1px solid rgba(255,255,255,.05);
+}
+
+
+/* ========================================
+   HEADER ICON
+======================================== */
+
+.icon-btn svg,
+.icon-btn i{
+
+  width:18px;
+
+  height:18px;
+
+  pointer-events:none;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .app-header{
+
+    gap:8px;
+
+    padding:8px 12px;
+  }
+
+  .app-title{
+
+    font-size:15px;
+  }
+
+  .icon-btn{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:12px;
+  }
+
+  .icon-btn svg,
+  .icon-btn i{
+
+    width:17px;
+
+    height:17px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media(max-width:420px){
+
+  .app-header{
+
+    padding:8px 10px;
+  }
+
+  .header-right{
+
+    gap:6px;
+  }
+
+  .app-title{
+
+    font-size:14px;
+  }
+
+  .icon-btn{
+
+    width:36px;
+
+    height:36px;
+  }
+}

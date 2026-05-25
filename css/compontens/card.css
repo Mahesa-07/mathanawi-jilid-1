@@ -1,0 +1,560 @@
+/* ========================================
+   CHAPTER SECTION
+======================================== */
+
+.chapter-section{
+
+  width:100%;
+
+  max-width:100%;
+
+  margin:0 auto;
+
+  padding:24px 10px 40px;
+}
+
+
+/* wrapper */
+
+.chapter-section section{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:2px;
+}
+
+
+/* ========================================
+   CARD / BAIT
+======================================== */
+
+.card,
+.bait{
+
+  position:relative;
+
+  padding:
+  18px 4px 24px;
+
+  margin:0;
+
+  background:none;
+
+  border:none;
+
+  border-radius:0;
+
+  overflow:visible;
+
+  transition:
+  opacity .24s ease,
+  transform .24s ease;
+}
+
+
+/* hover sangat lembut */
+
+.card:hover,
+.bait:hover{
+
+  opacity:.98;
+}
+
+
+/* active */
+
+.card:active,
+.bait:active{
+
+  transform:
+  scale(.998);
+}
+
+
+/* ========================================
+   SEPARATOR LINE
+   ultra-soft reading divider
+======================================== */
+
+.card::after,
+.bait::after {
+
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  opacity: .65;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    rgba(37, 99, 235, .25),
+    transparent
+  );
+}
+
+
+/* last item */
+
+.card:last-child::after,
+.bait:last-child::after{
+
+  display:none;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.card-title{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  margin-bottom:14px;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:1.4px;
+
+  color:var(--gold);
+
+  opacity:.72;
+}
+
+
+/* dot */
+
+.card-title::before{
+
+  content:"";
+
+  width:5px;
+
+  height:5px;
+
+  border-radius:50%;
+
+  background:var(--gold);
+
+  opacity:.7;
+}
+
+
+/* ========================================
+   TEXT CONTENT
+======================================== */
+
+.card-text,
+.bait p{
+
+  margin:0;
+
+  color:var(--text);
+
+  font-size:17px;
+
+  line-height:2.12;
+
+  letter-spacing:.12px;
+
+  text-align:left;
+
+  text-wrap:pretty;
+
+  overflow-wrap:break-word;
+
+  word-break:break-word;
+
+  text-rendering:
+  optimizeLegibility;
+
+  -webkit-font-smoothing:
+  antialiased;
+}
+
+
+/* ========================================
+   DROP CAP
+======================================== */
+
+.card-text::first-letter,
+.bait p::first-letter{
+
+  font-size:1.12em;
+
+  font-weight:600;
+
+  color:var(--gold);
+
+  opacity:.92;
+}
+
+
+/* ========================================
+   CARD ACTIONS
+======================================== */
+
+.card-actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-end;
+
+  gap:10px;
+
+  margin-top:22px;
+
+  padding-top:12px;
+
+  opacity:0;
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transform:
+  translateY(6px);
+
+  transition:
+  opacity .3s ease,
+  transform .3s ease,
+  max-height .3s ease;
+}
+
+
+/* show */
+
+.card.active .card-actions{
+
+  opacity:1;
+
+  max-height:120px;
+
+  transform:
+  translateY(0);
+}
+
+
+/* ========================================
+   BUTTON BASE
+======================================== */
+
+.card-actions button,
+.btn-bookmark,
+.btn-note,
+.btn-audio{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  min-height:36px;
+
+  padding:8px 14px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,.035);
+
+  color:var(--text);
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:.3px;
+
+  cursor:pointer;
+
+  transition:
+  transform .22s ease,
+  background .22s ease,
+  opacity .22s ease;
+}
+
+
+/* hover */
+
+.card-actions button:hover,
+.btn-bookmark:hover,
+.btn-note:hover,
+.btn-audio:hover{
+
+  background:
+  rgba(255,255,255,.06);
+
+  transform:
+  translateY(-1px);
+}
+
+
+/* active */
+
+.card-actions button:active,
+.btn-bookmark:active,
+.btn-note:active,
+.btn-audio:active{
+
+  transform:
+  scale(.97);
+}
+
+
+/* ========================================
+   BOOKMARK ACTIVE
+======================================== */
+
+.btn-bookmark.active{
+
+  color:var(--gold);
+
+  background:
+  rgba(255,215,120,.07);
+}
+
+
+/* ========================================
+   AUDIO BUTTON
+======================================== */
+
+.btn-audio{
+
+  color:var(--gold);
+
+  background:
+  rgba(214,179,106,.08);
+}
+
+
+/* ========================================
+   NOTE BOX
+======================================== */
+
+.note-box{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:0;
+
+  opacity:0;
+
+  max-height:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  transform:
+  translateY(-6px);
+
+  transition:
+  opacity .3s ease,
+  max-height .3s ease,
+  transform .3s ease,
+  margin-top .3s ease;
+}
+
+
+/* show */
+
+.note-box.show{
+
+  opacity:1;
+
+  max-height:340px;
+
+  margin-top:14px;
+
+  pointer-events:auto;
+
+  transform:
+  translateY(0);
+}
+
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.note-box textarea{
+
+  width:100%;
+
+  min-height:92px;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.035);
+
+  color:var(--text);
+
+  outline:none;
+
+  resize:none;
+
+  font-size:14px;
+
+  line-height:1.8;
+
+  transition:
+  background .22s ease;
+}
+
+
+/* focus */
+
+.note-box textarea:focus{
+
+  background:
+  rgba(255,255,255,.05);
+}
+
+
+/* ========================================
+   SAVE BUTTON
+======================================== */
+
+.note-box button{
+
+  align-self:flex-start;
+
+  min-height:36px;
+
+  padding:8px 16px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:var(--gold);
+
+  color:#111;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:
+  transform .22s ease,
+  opacity .22s ease;
+}
+
+
+/* hover */
+
+.note-box button:hover{
+
+  transform:
+  translateY(-1px);
+
+  opacity:.94;
+}
+
+
+/* ========================================
+   AUDIO
+======================================== */
+
+audio{
+
+  display:none;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .chapter-section{
+
+    padding:14px 6px 28px;
+  }
+
+  .card,
+  .bait{
+
+    padding:
+    16px 2px 22px;
+  }
+
+  .card-text,
+  .bait p{
+
+    font-size:15.7px;
+
+    line-height:2.02;
+  }
+
+  .card-actions{
+
+    justify-content:space-between;
+
+    gap:8px;
+  }
+
+  .btn-bookmark,
+  .btn-note,
+  .btn-audio{
+
+    flex:1;
+
+    font-size:11px;
+  }
+
+}
+
+
+/* ========================================
+   DESKTOP
+======================================== */
+
+@media(min-width:768px){
+
+  .card-text,
+  .bait p{
+
+    font-size:18px;
+
+    line-height:2.25;
+  }
+
+}
