@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathnawi • Jilid Satu</title>
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+
+<body>
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="app-header">
+    <div class="header-left">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka Menu">☰</button>
+    </div>
+    <div class="header-center">
+      <h2 class="app-title" onclick="window.location.href='../index.html'">Mathnawi 1</h2>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn search-btn" id="searchBtn" aria-label="Cari">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="icon-btn theme-btn" id="themeBtn" aria-label="Ganti Tema">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="sidebar-title" onclick="window.location.href='../index.html'">Menu</h2>
+      <button class="close-btn" id="closeBtn" aria-label="Tutup Menu">×</button>
+    </div>
+    <div class="sidebar-tabs">
+      <button class="tab-btn active" data-tab="bab">Bab</button>
+      <button class="tab-btn" data-tab="bookmark">Bookmark</button>
+      <button class="tab-btn" data-tab="note">Catatan</button>
+    </div>
+    <div class="sidebar-content">
+      <ul class="nav-list tab-content active" id="tab-bab"></ul>
+      <ul class="nav-list tab-content" id="tab-bookmark"></ul>
+      <ul class="nav-list tab-content" id="tab-note"></ul>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="hero-cover">
+        <img src="../img/bab10.jpg" alt="Sampul Kitab Mathnawī" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">Bab 10</div>
+        <h1 class="hero-title"><span></span></h1>
+        <p class="hero-text">Penjelasan bahwa pembunuhan dan peracunan tukang emas itu (didorong) oleh ilham Ilahi, bukan oleh keinginan nafsu dan pikiran jahat.</p>
+      </div>
+    </section>
+
+    <section class="chapter-section" id="app" data-bab="bab10"></section>
+  </main>
+
+  <button class="next-btn" onclick="window.location.href='./bab11.html'">Berikutnya →</button>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-header">
+      <input type="text" id="searchInput" placeholder="Cari bab, teks, atau kata..." autocomplete="off"/>
+      <button id="closeSearch" aria-label="Tutup">×</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <audio id="clickSound" preload="auto">
+    <source src="../audio/click.mp3" type="audio/mpeg">
+  </audio>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

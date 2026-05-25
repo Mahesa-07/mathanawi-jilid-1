@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mathnawi • Jilid Satu</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/app.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- READING PROGRESS -->
+  <div
+    class="reading-progress"
+    id="readingProgress"
+  ></div>
+
+  <!-- HEADER -->
+   <header class="app-header">
+
+    <!-- LEFT: MENU -->
+    <div class="header-left">
+      <button
+        class="icon-btn menu-btn"
+        id="menuBtn"
+        aria-label="Buka Menu"
+      >
+        ☰
+      </button>
+    </div>
+
+    <!-- CENTER: TITLE -->
+    <div class="header-center">
+      <h2 class="app-title" onclick="window.location.href='../index.html'">Mathnawi Jilid1 Bab1</h2>
+    </div>
+
+    <!-- RIGHT: ACTIONS -->
+    <div class="header-right">
+
+     <button class="icon-btn search-btn" id="searchBtn" aria-label="Cari">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+    <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+      <button
+  class="icon-btn theme-btn"
+  id="themeBtn"
+  aria-label="Ganti Tema"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+    <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"
+      stroke="currentColor" stroke-width="2"
+      stroke-linecap="round"/>
+  </svg>
+</button>
+
+    </div>
+
+  </header>
+
+  <!-- OVERLAY -->
+  <div
+    class="overlay"
+    id="overlay"
+  ></div>
+
+  <!-- SIDEBAR -->
+ <aside id="sidebar">
+
+  <div class="sidebar-header">
+
+    <h2 class="sidebar-title" onclick="window.location.href='../index.html'">
+      Menu
+    </h2>
+
+    <button class="close-btn" id="closeBtn" aria-label="Tutup Menu">
+      ×
+    </button>
+
+  </div>
+
+  <!-- TAB MENU -->
+  <div class="sidebar-tabs">
+
+    <button class="tab-btn active" data-tab="bab">Bab</button>
+    <button class="tab-btn" data-tab="bookmark">Bookmark</button>
+    <button class="tab-btn" data-tab="note">Catatan</button>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="sidebar-content">
+
+    <!-- DAFTAR BAB -->
+    <ul class="nav-list tab-content active" id="tab-bab"></ul>
+
+    <!-- BOOKMARK -->
+    <ul class="nav-list tab-content" id="tab-bookmark"></ul>
+
+    <!-- CATATAN -->
+    <ul class="nav-list tab-content" id="tab-note"></ul>
+
+  </div>
+
+</aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-cover">
+
+        <img
+          src="../img/mukadimah.jpg"
+          alt="Sampul Kitab Mathnawī"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          Mukadimah
+        </div>
+
+        <h1 class="hero-title">
+
+          Mathnawī
+          <span>Jilid Satu</span>
+
+        </h1>
+
+        <p class="hero-text">
+
+          Sebuah samudra hikmah dari
+          Maulana Jalāluddīn Rūmī yang
+          mengalir melalui syair, kisah,
+          dan simbol-simbol ruhani
+          tentang cinta, jiwa, dan
+          perjalanan menuju Tuhan.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CHAPTER -->
+   <section
+  class="chapter-section"
+  id="chapters"
+>
+
+  <section id="bab0">
+
+    <h2>Pembuka Matsnawi</h2>
+
+    <p class="chapter-intro">
+      Dengan menyebut Nama Allah yang pengasih lagi penyanyang
+    </p>
+
+    <article
+      class="bait"
+      id="bab0-1"
+    >
+
+      <p>
+        Ini adalah Kitab Matsnawi, yang merupakan akar dari akar ajaran Nabi Muhammad s.a.w. sehubungan dengan-Nya, yang mengungkapkan misteri pencapaian kepada Kebenaran dan keyakinan; yang merupakan ilmu agung serta penunjuk jalan agama yang jelas, dan bukti Ilahi yang paling nyata.  
+      </p>
+
+    </article>
+
+    <article
+      class="bait"
+      id="bab0-2"
+    >
+
+      <p>
+        Perumpamaan cahaya yang datang dari-Nya adalah sebuah misykat yang di dalamnya ada lampu bersinar-sinar, dengan kilauannya yang lebih benderang dari fajar yang menyingsing. Ia (Matsnawi) merupakan surga bagi kalbu, di dalamnya aneka air dan pohon yang teduh.  
+      </p>
+
+    </article>
+
+    <article
+      class="bait"
+      id="bab0-3"
+    >
+
+      <p>
+        Di antaranya disebut telaga salsabil oleh para penempuh suluk (jalan kerohanian). Dan di dalam pemilik maqam (peringkat) dan karunia Ilahi, Matsnawi merupakan maqam dan tempat pemberhentian terbaik di dalam perjalanan menuju hadirat Ilahi.  
+      </p>
+      </article>
+      
+      <article
+      class="bait"
+      id="bab0-3"
+    >
+
+      <p>
+        Di dalamnya orang yang berakal budi dapat minum, dan dengan itu orang yang merdeka (secara rohani) dapat bergembira dan bersenang-senang. Seperti sungai Nil di Mesir, yang di dalamnya ada minuman segar bagi mereka yang sabar (sanggup mengendalikan diri), tetapi tidak menyenangkan bagi pengikut Fir‘aun dan orang musyrik.  
+      </p>
+      </article>
+      <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        Sebagaimana firman Allah: <i>“Dia membiarkan sebagian dari mereka itu sesat, dan yang lain mendapat petunjuk.”</i>
+      </p>
+      </article>
+      
+            </p>
+      </article>
+      <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        Matsnawi adalah obat bagi hati yang pilu, penawar duka cita yang mendalam, sekaligus penjelasan atas ayat-ayat Al-Qur’an. 
+<br>Ia adalah sumber karunia Ilahi yang berlimpah, ditujukan bagi orang yang ingin merubah tabiat buruk dari dirinya.
+<br>Ditulis oleh tangan orang berakal budi, yang pantang menyampaikan kata-kata sia-sia, kecuali perkataan yang menyucikan hati. 
+<br><br>Kekeliruan sukar menghampirinya, baik dari belakang maupun dari depan, karena Rabb mengawasinya dan senantiasa melihat pekerjaannya. 
+<br><br>Ia adalah petunjuk terbaik, serta Maha Pengasih dari mereka yang menunjukkan sifat pengasih mereka.
+      </p>
+      </article>
+      <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        Kami telah berusaha menghemat kata-kata, sebab kata-kata yang hemat memberi banyak pengertian. 
+<br>Seteguk air memberi petunjuk tentang ciri-ciri air di kolam, dan segenggam gandum memberi petunjuk tentang tepung girikan yang akan dijadikan hidangan.
+<br><br>Maka bertakwalah fakir dhaif yang hanya memerlukan (fuqara) kasih sayang Rabb Yang Maha Tinggi, yaitu Muhammad bin Muhammad bin Hisyam al-Bakhi – semoga Rabb menerima permohonannya:
+      </p>
+      </article>
+      
+
+      <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        “Saya dituntut menulis bait-bait karangan bersajak (Matsnawi) yang panjang, yang di dalamnya tertera kisah-kisah ajaib dan perkataan yang jarang didengar, perbincangan yang elok dan isyarat yang berharga, serta petunjuk di jalan zuhud dan taman rohani orang beriman.
+ <br><br>Semua ini diungkapkan secara ringkas, padat, namun berlimpah makna, dan kitab ini kutulis untuk memenuhi permintaan sahabat sekaligus guruku, yang mempunyai tempat khusus dalam hatiku, yang merupakan gudang perbendaharaan hari ini dan esok.
+      </p>
+      </article>
+      
+      <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        Dialah syekh, teladan bagi mereka yang mengenal Rabb,
+<br>pemimpin bagi mereka yang memiliki petunjuk dan keyakinan besar, penolong umat manusia, pemelihara hati dan nurani yang terpercaya,
+<br>yang dipelihara oleh Rabb di antara ciptaan-Nya, pilihan di antara ciptaan yang lain,
+<br>dan sasaran dari perintah yang Dia sampaikan kepada utusan-Nya.Ia adalah rahasia yang disembunyikan di antara pengikut Rasul-Nya,
+<br>kunci perbendaharaan tersembunyi, pengawas harta karun di bumi, ayah kebajikan: Hasamuddin (pedang agama yang benar),
+<br>Hasan bin Muhammad bin al-Hassan, yang lebih dikenal sebagai Ibn Akhi Turk.
+      </p>
+      </article>
+        <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        Ia adalah Bayazid pada zamannya, Junaid pada masanya. Semoga Tuan berkenan kepadanya dan kepada mereka semua – penduduk urnunya yang silsilahnya tersambung dengan syekh mulia ini. Sebagaimana yang dikatakannya: “Pada malam hari aku adalah orang Kurdi, dan pada pagi hari aku orang Arab.”
+<br>Semoga Rabb membersihkan jiwanya dan jiwa para penerusnya. Betapa mulia leluhur mereka, dan betapa berbudinya para penerusnya.
+<br>Silsilahnya adalah keturunan yang baginya matahari membukakan jubahnya, yang masyhur sehingga Bintang-Bintang mengerlipkan cahaya. 
+<br>Kebun (keluarga) mereka yang memiliki kiblat keberuntungan, yang membuat anak-anak para pemimpin rohani berpaling kepadanya, 
+<br>dan memiliki pula Ka,bah harapan yang kelilingi oleh utusan para pelamar kemurahan hatinya; dan semoga begitu seterusnya, selama Bintang terbit dan matahari Timur tampak di cakrawala, 
+      </p>
+      </article>
+      
+        <article
+      class="bait"
+      id="bab0-3">
+
+      <p>
+        hingga akhirnya menjadi Benteng bagi keinsafan ilahiah, rohaniah, ukhrawi, memberikan kasyf (penyingkapan) kepada orang yang memiliki penglihatan hati, 
+<br>orang yang gemar tafakur yang mampu melihat ketidak hadirannya yang hadir, Raja-Raja di dekat jubah bangsawan, bangsawan dari bangsa-bangsa, pemilik kepiawaian, seorang Bintang yang memperlihatkan bukti-bukti ketuhanan. 
+<br><br><i>Amin' ya Rabb al-alamin,</i> dan inilah doa yang mudah-mudahan terkabulkan, 
+<br>karena didalamnya terkandung permohonan dari segenap lapisan akan kewujudan. 
+<br><br>Maha Besar Allah, untuk sekalian makhluk yang tanpa sekutu, yang memberkati seorang saja dari hamba-nya yang terbaik Nabi Muhammad-s.a.w beserta sahabat yang mulia dan tulus menjalankan ibadah dan amal shaleh.
+
+      </p>
+      </article>
+
+  </section>
+
+</section>
+
+  </main>
+
+  <!-- NEXT BUTTON -->
+  <button
+    class="next-btn"
+    onclick="window.location.href='../pages/bab1.html'"
+  >
+    Berikutnya →
+  </button>
+
+  <!-- SEARCH -->
+  <div
+    class="search-overlay"
+    id="searchOverlay"
+  >
+
+    <div class="search-header">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari bab, teks, atau kata..."
+        autocomplete="off"
+      >
+
+      <button
+        id="closeSearch"
+        aria-label="Tutup"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="search-results"
+      id="searchResults"
+    ></div>
+
+  </div>
+  
+  <audio id="clickSound" preload="auto">
+  <source src="../audio/click.mp3" type="audio/mpeg">
+</audio>
+
+
+
+  <script
+    type="module"
+    src="../js/main.js"
+  ></script>
+
+</body>
+</html>
