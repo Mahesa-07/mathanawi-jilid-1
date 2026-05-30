@@ -1,6 +1,118 @@
 /* ========================================
+   SEARCH THEME VARIABLES
+======================================== */
+
+:root{
+
+  --search-bg:
+  rgba(10,12,16,.94);
+
+  --search-card:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.03)
+  );
+
+  --search-card-hover:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.03)
+  );
+
+  --search-input:
+  rgba(255,255,255,.05);
+
+  --search-input-focus:
+  rgba(255,255,255,.07);
+
+  --search-border:
+  rgba(255,255,255,.05);
+
+  --search-border-hover:
+  rgba(255,255,255,.08);
+
+  --search-text:
+  #ffffff;
+
+  --search-subtext:
+  rgba(255,255,255,.72);
+
+  --search-placeholder:
+  rgba(255,255,255,.45);
+
+  --search-button:
+  rgba(255,255,255,.06);
+
+  --search-button-hover:
+  rgba(255,255,255,.10);
+
+  --search-highlight:
+  rgba(214,179,106,.18);
+
+  --search-highlight-border:
+  rgba(214,179,106,.55);
+
+  --search-highlight-text:
+  #f6d28b;
+}
+
+
+/* ========================================
+   LIGHT MODE
+======================================== */
+
+.light{
+
+  --search-bg:
+  rgba(255,255,255,.96);
+
+  --search-card:
+  linear-gradient(
+    180deg,
+    rgba(0,0,0,.03),
+    rgba(0,0,0,.015)
+  );
+
+  --search-card-hover:
+  linear-gradient(
+    180deg,
+    rgba(0,0,0,.05),
+    rgba(0,0,0,.02)
+  );
+
+  --search-input:
+  rgba(0,0,0,.04);
+
+  --search-input-focus:
+  rgba(0,0,0,.05);
+
+  --search-border:
+  rgba(0,0,0,.06);
+
+  --search-border-hover:
+  rgba(0,0,0,.09);
+
+  --search-text:
+  #111827;
+
+  --search-subtext:
+  rgba(17,24,39,.72);
+
+  --search-placeholder:
+  rgba(17,24,39,.45);
+
+  --search-button:
+  rgba(0,0,0,.04);
+
+  --search-button-hover:
+  rgba(0,0,0,.07);
+}
+
+
+/* ========================================
    OVERLAY
-   PREMIUM BACKDROP
 ======================================== */
 
 .overlay{
@@ -15,6 +127,8 @@
 
   visibility:hidden;
 
+  pointer-events:none;
+
   background:
   rgba(0,0,0,.42);
 
@@ -26,8 +140,7 @@
 
   transition:
   opacity .28s ease,
-  visibility .28s ease,
-  backdrop-filter .28s ease;
+  visibility .28s ease;
 }
 
 
@@ -38,6 +151,8 @@
   opacity:1;
 
   visibility:visible;
+
+  pointer-events:auto;
 }
 
 
@@ -62,10 +177,12 @@
     env(safe-area-inset-top) + 14px
   )
   16px
-  18px;
+  calc(
+    env(safe-area-inset-bottom) + 18px
+  );
 
   background:
-  rgba(10,12,16,.94);
+  var(--search-bg);
 
   backdrop-filter:
   blur(18px);
@@ -76,6 +193,8 @@
   opacity:0;
 
   visibility:hidden;
+
+  pointer-events:none;
 
   transform:
   scale(1.02);
@@ -94,6 +213,8 @@
   opacity:1;
 
   visibility:visible;
+
+  pointer-events:auto;
 
   transform:
   scale(1);
@@ -128,28 +249,34 @@
 
   padding:14px 16px;
 
-  border:none;
+  border:
+  1px solid transparent;
 
   outline:none;
 
   border-radius:18px;
 
   background:
-  rgba(255,255,255,.05);
+  var(--search-input);
 
-  color:#fff;
+  color:
+  var(--text);
 
   font-size:15px;
 
   letter-spacing:.1px;
+
+  appearance:none;
+
+  -webkit-appearance:none;
 
   backdrop-filter:
   blur(10px);
 
   transition:
   background .22s ease,
-  box-shadow .22s ease,
-  border-color .22s ease;
+  border-color .22s ease,
+  box-shadow .22s ease;
 }
 
 
@@ -158,7 +285,7 @@
 .search-header input::placeholder{
 
   color:
-  rgba(255,255,255,.45);
+  var(--search-placeholder);
 }
 
 
@@ -167,7 +294,10 @@
 .search-header input:focus{
 
   background:
-  rgba(255,255,255,.07);
+  var(--search-input-focus);
+
+  border-color:
+  rgba(224,184,79,.18);
 
   box-shadow:
   0 0 0 3px rgba(224,184,79,.10);
@@ -188,12 +318,15 @@
 
   border:none;
 
+  outline:none;
+
   border-radius:16px;
 
   background:
-  rgba(255,255,255,.06);
+  var(--search-button);
 
-  color:#fff;
+  color:
+  var(--text);
 
   font-size:22px;
 
@@ -201,6 +334,9 @@
 
   backdrop-filter:
   blur(10px);
+
+  -webkit-tap-highlight-color:
+  transparent;
 
   transition:
   transform .22s ease,
@@ -217,7 +353,7 @@
   translateY(-2px);
 
   background:
-  rgba(255,255,255,.10);
+  var(--search-button-hover);
 
   box-shadow:
   0 6px 18px rgba(0,0,0,.18);
@@ -249,6 +385,9 @@
   touch;
 
   scrollbar-width:none;
+
+  overscroll-behavior:
+  contain;
 }
 
 
@@ -277,21 +416,21 @@
   border-radius:20px;
 
   background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,.05),
-    rgba(255,255,255,.03)
-  );
+  var(--search-card);
 
   border:
-  1px solid rgba(255,255,255,.05);
+  1px solid var(--search-border);
 
-  color:#fff;
+  color:
+  var(--text);
 
   cursor:pointer;
 
   backdrop-filter:
   blur(10px);
+
+  -webkit-tap-highlight-color:
+  transparent;
 
   transition:
   transform .22s ease,
@@ -330,17 +469,22 @@
   translateY(-2px);
 
   background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.03)
-  );
+  var(--search-card-hover);
 
   border-color:
-  rgba(255,255,255,.08);
+  var(--search-border-hover);
 
   box-shadow:
   0 10px 24px rgba(0,0,0,.16);
+}
+
+
+/* active */
+
+.search-item:active{
+
+  transform:
+  scale(.985);
 }
 
 
@@ -359,6 +503,9 @@
   font-weight:650;
 
   letter-spacing:.1px;
+
+  color:
+  var(--text);
 }
 
 
@@ -370,11 +517,12 @@
 
   margin-top:4px;
 
-  opacity:.68;
-
-  line-height:1.55;
+  line-height:1.6;
 
   font-size:12.5px;
+
+  color:
+  color: var(--muted);
 }
 
 
@@ -427,6 +575,34 @@
 
 
 /* ========================================
+   SEARCH HIGHLIGHT
+======================================== */
+
+mark{
+
+  background:
+  var(--search-highlight);
+
+  color:
+  var(--search-highlight-text);
+
+  border-bottom:
+  1px solid
+  var(--search-highlight-border);
+
+  padding:0 2px;
+
+  border-radius:4px;
+
+  font-weight:600;
+
+  box-decoration-break:clone;
+
+  -webkit-box-decoration-break:clone;
+}
+
+
+/* ========================================
    MOBILE
 ======================================== */
 
@@ -439,7 +615,9 @@
       env(safe-area-inset-top) + 12px
     )
     14px
-    16px;
+    calc(
+      env(safe-area-inset-bottom) + 16px
+    );
   }
 
   .search-header{
@@ -496,7 +674,9 @@
       env(safe-area-inset-top) + 10px
     )
     12px
-    14px;
+    calc(
+      env(safe-area-inset-bottom) + 14px
+    );
   }
 
   .search-item{
